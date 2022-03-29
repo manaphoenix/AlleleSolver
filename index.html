@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Punnet Calculator</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="css/sidenav.css" media="screen"/>
+    <script type="text/javascript" src="/alleleSolver.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  </head>
+
+  <body>
+    <div id="content">
+      <header>
+        <h1>Punnet Calculator</h1>
+      </header>
+      <section class="sectionContent">
+        <h4>About</h4>
+        <p>
+            This is a punnett square solver / generator.<br>
+            Things to keep in mind:<br>
+            <ul>
+                <li>a punnett square is a method for visually showing the chance of a trait happening when two allele pairs are crossed.</li>
+                <li>Uppercase letters are dominant and if present always win. this means BB or Bb the dominant "B" trait still wins.</li>
+                <li>Lowercase letters are recessive and only win if a dominant trait is not present.</li>
+            </ul>
+            To begin using this put an allele pair into Pairs A and Pairs B boxes. An allele is always made of up two letters, and can be chained together with multiple different letters.
+            A two chain allele pair is called a dihybrid cross as an example. (IE. BBRR is a dihybrid)
+        </p>
+        <h4>Settings</h4>
+        <form>
+          Allele Pairs A:
+          <span id="PairA" class="input" role="textbox" contenteditable></span><br>
+          Allele Pairs B:
+          <span id="PairB" class="input" role="textbox" contenteditable></span><br>
+          <input type="button" value="Generate" onclick="generatePairs()">
+        </form>
+        <h4>Table</h4>
+        <table id="allele_table">
+          <tr><td>Press Generate to create the table!</td></tr>
+        </table>
+        <h4>Table Information</h4>
+        <blockquote id="allele_info">
+          Information!
+        </blockquote>
+      </section>
+      <footer>
+        <div>
+          <label>Author: Manaphoenix</label>
+          <label>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/manaphoenix">Github</a>
+          </label>
+        </div>
+      </footer>
+    </div>
+  </body>
+
+</html>
