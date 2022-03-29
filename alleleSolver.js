@@ -1,51 +1,51 @@
-
-
 function generateInfo(mats, max) {
   let infoBox = document.getElementById('allele_info')
-  infoBox.innerHTML = ""
+  infoBox.innerHTML = ''
   let charInfo = []
-  mats.forEach(arr => {
-      arr.forEach(str => {
-          let sortedStr = sortString(str)
-          let pair = sortedStr.match(/.{1,2}/g)
-          pair.forEach(x => {
-              let charSymbol = x.substring(0,1).toUpperCase()
-                if (/[A-Z]/.test(x)) {
-                    charInfo[charSymbol] = (charInfo[charSymbol] || 0) + 1
-                }
-          })
+  mats.forEach((arr) => {
+    arr.forEach((str) => {
+      let sortedStr = sortString(str)
+      let pair = sortedStr.match(/.{1,2}/g)
+      pair.forEach((x) => {
+        let charSymbol = x.substring(0, 1).toUpperCase()
+        if (/[A-Z]/.test(x)) {
+          charInfo[charSymbol] = (charInfo[charSymbol] || 0) + 1
+        }
       })
-  });
+    })
+  })
   for (let prop in charInfo) {
-      infoBox.innerHTML += `${prop}: ${charInfo[prop]}/${max} (${(charInfo[prop]/max)*100}%)<br>`
+    infoBox.innerHTML += `${prop}: ${charInfo[prop]}/${max} (${
+      (charInfo[prop] / max) * 100
+    }%)<br>`
   }
 }
 
 function isUpper(str) {
-    return !/[a-z]/.test(str) && /[A-Z]/.test(str);
+  return !/[a-z]/.test(str) && /[A-Z]/.test(str)
 }
 
 function sortString(str) {
-    let chars = []
-    for (i = 0; i < str.length; i++) {
-        let char = str.charAt(i);
-        chars.push(char)
-    }
-    chars.sort((a, b) => a.localeCompare(b, 'en-US', {caseFirst: 'upper'}));
-    return chars.join("");
+  let chars = []
+  for (i = 0; i < str.length; i++) {
+    let char = str.charAt(i)
+    chars.push(char)
+  }
+  chars.sort((a, b) => a.localeCompare(b, 'en-US', { caseFirst: 'upper' }))
+  return chars.join('')
 }
 
 function generateColorString(str) {
-    let temp = ""
-    for (i = 0; i < str.length; i++) {
-        let char = str.charAt(i);
-        if (isUpper(char)) {
-            temp += `<span class="upper">${char}</span>`
-        } else {
-            temp += char
-        }
+  let temp = ''
+  for (i = 0; i < str.length; i++) {
+    let char = str.charAt(i)
+    if (isUpper(char)) {
+      temp += `<span class="upper">${char}</span>`
+    } else {
+      temp += char
     }
-    return temp
+  }
+  return temp
 }
 
 function generateTable(pairA, pairB) {
@@ -75,7 +75,7 @@ function generateTable(pairA, pairB) {
   let table = document.getElementById('allele_table')
   table.innerHTML = ''
 
-  generateInfo(mat, a.length*b.length)
+  generateInfo(mat, a.length * b.length)
   for (var i = 0; i < rows; i++) {
     let row = table.insertRow(i)
     for (var c = 0; c < cols; c++) {
@@ -103,6 +103,5 @@ function generatePairs() {
   if (pairA.length == 0 || pairB.length == 0) return
   if (pairA.length % 2 != 0 || pairB.length % 2 != 0) return
 
-  
   generateTable(pairA, pairB)
 }
