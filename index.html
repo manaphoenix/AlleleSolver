@@ -10,7 +10,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="css/sidenav.css" media="screen"/>
     <script type="text/javascript" src="/alleleSolver.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script defer="defer" src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
   </head>
 
   <body>
@@ -21,15 +21,14 @@
       <section class="sectionContent">
         <h4>About</h4>
         <p>
-            This is a punnett square solver / generator.<br>
-            Things to keep in mind:<br>
-            <ul>
-                <li>a punnett square is a method for visually showing the chance of a trait happening when two allele pairs are crossed.</li>
-                <li>Uppercase letters are dominant and if present always win. this means BB or Bb the dominant "B" trait still wins.</li>
-                <li>Lowercase letters are recessive and only win if a dominant trait is not present.</li>
-            </ul>
-            To begin using this put an allele pair into Pairs A and Pairs B boxes. An allele is always made of up two letters, and can be chained together with multiple different letters.
-            A two chain allele pair is called a dihybrid cross as an example. (IE. BBRR is a dihybrid)
+          This is a punnett square solver / generator.<br>
+          Things to keep in mind:<br>
+          <ul>
+            <li>a punnett square is a method for visually showing the chance of a trait happening when two allele pairs are crossed.</li>
+            <li>Uppercase letters are dominant and if present always win. this means BB or Bb the dominant "B" trait still wins.</li>
+            <li>Lowercase letters are recessive and only win if a dominant trait is not present.</li>
+          </ul>
+          To begin using this put an allele pair into Pairs A and Pairs B boxes. An allele is always made of up two letters, and can be chained together with multiple different letters. A two chain allele pair is called a dihybrid cross as an example. (IE. BBRR is a dihybrid)
         </p>
         <h4>Settings</h4>
         <form>
@@ -41,7 +40,9 @@
         </form>
         <h4>Table</h4>
         <table id="allele_table">
-          <tr><td>Press Generate to create the table!</td></tr>
+          <tr>
+            <td>Press Generate to create the table!</td>
+          </tr>
         </table>
         <h4>Table Information</h4>
         <blockquote id="allele_info">
@@ -58,6 +59,11 @@
           <label>
             <i class="fab fa-github"></i>
             <a href="https://github.com/manaphoenix/AlleleSolver">Source</a>
+          </label>
+          <label>
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/MCJack123">Jacks Github</a>
+            <label>Extra thanks to JackMacWindows for his help!</label>
           </label>
         </div>
       </footer>
